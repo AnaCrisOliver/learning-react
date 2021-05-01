@@ -11,8 +11,6 @@ export default () => {
   const [featuredData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
 
-
-
   useEffect(()=>{
     const loadAll = async () => {
       // Pegando a lista toda
@@ -60,10 +58,17 @@ export default () => {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
-      Header
-      Destaque
-      Listas
-      Rodapé
+      <footer>
+        Made with <span role="img" aria-label="coração">❤️</span> by AnaCrisOliver <br/>
+        Image copyright: Netflix <br/>
+        Data: Themoviedb.org
+      </footer>
+
+      {movieList.length <=0 &&
+        <div className="loading">
+        <img src="https://media.wired.com/photos/592744d3f3e2356fd800bf00/master/w_2560%2Cc_limit/Netflix_LoadTime.gif" alt="Loading" />
+      </div>
+      }  
     </div>
   );
 }

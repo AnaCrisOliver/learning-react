@@ -2,12 +2,16 @@ import React from 'react';
 import './FeaturedMovie.css';
 
 export default ({item}) => {
-    console.log(item);
 
+    let description = item.overview;
     let firstDate = new Date(item.first_air_date);
     let genres = [];
     for(let i in item.genres){
         genres.push( item.genres[i].name);
+    }
+
+    if(description.length > 300){
+        description = description.substring(0,200)+'...';
     }
 
     return (
@@ -24,7 +28,8 @@ export default ({item}) => {
                         <div className="featured--year"> {firstDate.getFullYear()} </div>
                         <div className="featured--seasons"> {item.number_of_seasons} season{item.number_of_seasons !== 1 ? 's' : ''} </div>
                     </div>
-                    <div className="featured--description">{item.overview}</div>
+
+                    <div className="featured--description">{description}</div>
                     <div className="featured--butons">
                         <a href={`/watch/${item.id}`} className="featured--watchbutton"> ► Watch</a>
                         <a href= {`/list/add/${item.id}`} className="featured--mylistbutton" >+ My list</a>
@@ -33,8 +38,6 @@ export default ({item}) => {
                     <div className="featured--genres"><strong>Gêneros: </strong>{genres.join(', ')}</div>
                 </div>
             </div>
-            
-           
         </section>
     );
 }

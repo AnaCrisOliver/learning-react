@@ -90,3 +90,39 @@
     font-size: 15px;
     color: #999;
 }
+
+@media (max-width:760px) {
+    .featured--name{
+        font-size: 20px;
+    }
+    .featured {
+        height: 80vh;
+    }
+    .featured--horizontal {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: linear-gradient(to right, #222 20%, transparent 80%);
+    }
+    .featured--info {
+        font-size: 12px;
+    }
+    .featured--description {
+    
+        margin-top: 15px;
+        margin-right: 30px;
+        font-size: 12px;
+        max-width: 100%;
+        color: #999;
+    }
+    .featured--genres {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #999;
+    }
+    .featured--watchbutton,
+    .featured--mylistbutton {
+        font-size: 15px;
+    }
+}
