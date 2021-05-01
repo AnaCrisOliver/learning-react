@@ -1,3 +1,3 @@
-#Netflix
+# Netflix
 
-This is my first oficial react project.
+This is officially my first react project, based on Netflix official website.
